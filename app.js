@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             squares[currentLaserIndex].classList.remove('laser')
             currentLaserIndex -= width
             squares[currentLaserIndex].classList.add('laser')
-            if(squares[currentLaserIndex].contains('invader')) {
+            if(squares[currentLaserIndex].classList.contains('invader')) {
                 squares[currentLaserIndex].classList.remove('laser')
                 squares[currentLaserIndex].classList.remove('invader')
                 squares[currentLaserIndex].classList.add('boom')
@@ -113,16 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => squares[currentLaserIndex].classList.remove('laser'), 100)
             }
         }
-
-        document.addEventListener('keyup', e => {
-            if (e.keycode === 32) {
-                laserId = setInterval(moveLaser,100)
+            if (e.keyCode === 32) {
+                laserId = setInterval(moveLaser, 100)
             }
-        })
-
-        document.addEcentListener('keyup', shoot)
-    
     }
+    document.addEventListener('keyup', shoot)
 })
-
-// /mnt/c/Users/jorda/Code/js-practice/space_invaders
